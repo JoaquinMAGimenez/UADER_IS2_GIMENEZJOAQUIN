@@ -32,3 +32,7 @@ while len(primeList) < count:
 		primeList.append(x)
 	x += 1
 print(primeList)
+
+# Luego de haber borrado accidentalmente el archivo "primos.py" de nuestro equipo y recuperarlo 
+# mediante el comando git cheackout primos.py, el archivo sigue funcionando correctamente, por lo que
+# ya se puede sincronizar con nuestro repositorio remoto en GitHub.
