@@ -10,35 +10,47 @@ import numpy as np
 #plt.plot(xaxis, yaxis)
 #plt.show()
 
-n = int(input('ingrese un numero mayor a 0'));
-if n > 0:
-    while n != 1:
-        if n % 2 == 0:
-            n = n / 2
-        else:
-            n = n*3+1;
-else:
-    print ('debe ingresar un numero mayor a 0');
+#n = int(input('ingrese un numero mayor a 0'));
+#if n > 0:
+    #while n != 1:
+   #     if n % 2 == 0:
+    #        n = n / 2
+ #       else:
+  #          n = n*3+1;
+#else:
+ #   print ('debe ingresar un numero mayor a 0');
 
-print(n)
+#print(n)
 
 def collatz(n):
-    susecion = [n]
+    susecion = [n];
     if n==1:
-        susecion.append(n)
-        return susecion
+        susecion.append(n);
+        return susecion;
     if n > 0:
         while n != 1:
          if n % 2:
             n = n*3+1
          else:
-            n //  2;
+            n = n // 2;
+            susecion.append(n);
     
+    return susecion;
 
 
-arrayejeX = np.array([])
+arrayejeX =[];
 
-arrayejeY = np.array([])
+arrayejeY = [];
 
-plt.plot(arrayejeX, arrayejeY)
+for h in range (1,10000):
+   resultado_final = collatz(h);
+   arrayejeX.append(h);
+
+   arrayejeY.append(len(resultado_final));
+
+plt.plot(arrayejeX, arrayejeY);
+
 plt.show()
+
+#tuve problemas con la libreria numpy y la solucion fue no colocar la carpeta del codigo en el explorador del visual estudio code 
+# y realizar el ejercicio sobre el archivo de lineas por eso aparece copiado sobre este mismo
