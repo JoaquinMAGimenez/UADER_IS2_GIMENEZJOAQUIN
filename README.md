@@ -22,5 +22,7 @@ Tercer elemento
 2-	   Segundo elemento
 3-	   Tercer elemento
 
-
- ! [] (https://www.infobae.com/new-resizer/TS6quYw4wOgXx_iZgpB083LrYxA=/992x614/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/GTFWR4ZED5HIRJYUND45LK6D2A.jpg)
+#no estoy pudiendo anexar la imagen asique copio el link en su lugar
+ (https://www.infobae.com/new-resizer/TS6quYw4wOgXx_iZgpB083LrYxA=/992x614/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/GTFWR4ZED5HIRJYUND45LK6D2A.jpg)
+ 
+ El Readme se realizo con la ayuda de la herramienta Word y con ayuda de [Google](https://www.google.com/).
