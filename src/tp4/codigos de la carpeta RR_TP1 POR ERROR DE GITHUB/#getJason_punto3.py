@@ -7,10 +7,10 @@ if __debug__:
     print("__debug__ es true--> Codigo nuevo")
 else:
     print("__debug__ es false-> Codigo viejo")
-saldo_cuenta=[1000,2000]
+saldo_en_la_cuenta=[10,50]
 
 def ayuda():
-    """Proporciona ayuda al usuario"""
+
     print('-Para ejecutar el archivo es necesario que le pases un archivo json con los token')
     print('-el archivo devolvera un token a utilizar')
     print('-Si hay mas de dos token en el json se debe modificar el programa para que los lea')
@@ -68,9 +68,9 @@ class Token1(Handler):
 
     def handle(self, request, file, pedido,collection):
         def cuenta1():
-            return saldo_cuenta[0]
+            return saldo_en_la_cuenta[0]
         if cuenta1()>= request:
-            saldo_cuenta[0]=saldo_cuenta[0]- request
+            saldo_en_la_cuenta[0]=saldo_en_la_cuenta[0]- request
             t = AbstractToken()
             collection.add_item("Numero de Pedido: "+ str(pedido) + " Saldo: " +str(request)+" Cuenta con la que se realizo el pago: "+str(t.token(file, 1)))
         else:
@@ -82,9 +82,9 @@ class Token1(Handler):
 class Token2(Handler):
     def handle(self, request, file, pedido,collection):
         def cuenta2():
-            return saldo_cuenta[1]
+            return saldo_en_la_cuenta[1]
         if cuenta2() >= request:
-            saldo_cuenta[1]=saldo_cuenta[1]-request
+            saldo_en_la_cuenta[1]=saldo_en_la_cuenta[1]-request
             t = AbstractToken()
             t.token(file, 2)
             collection.add_item("Numero de Pedido: "+ str(pedido) + " Saldo: " +str(request)+" Cuenta con la que se realizo el pago: "+str(t.token(file, 2)))
@@ -150,7 +150,7 @@ if __name__ == '__main__':
             i= str(input('¿Desea realizar una transaccion?: '))
             while i == 'si':
                 pedido = int(input('Ingrese el numero del pedido de pago: '))
-                saldo = int(input('Ingrese el monto a pagar: '))
+                saldo = int(input('monto a pagar: '))
                 token_1.nextHandler = token_2
                 token_2.nextHandler = error_token
                 token_1.handle(saldo, JSON_FILE, pedido,collection)
@@ -165,6 +165,6 @@ if __name__ == '__main__':
     except FileNotFoundError:
         print('parametro incorrecto')
     except json.decoder.JSONDecodeError:
-        print('ingrese un archivo json')
+        print('Debe ingrese un archivo json')
     except KeyError:
         print('El numero ingresado no se encuentra en el archivo json')
