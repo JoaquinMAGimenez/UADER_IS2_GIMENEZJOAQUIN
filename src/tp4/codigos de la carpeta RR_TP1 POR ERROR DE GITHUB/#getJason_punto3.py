@@ -7,7 +7,7 @@ if __debug__:
     print("__debug__ es true--> Codigo nuevo")
 else:
     print("__debug__ es false-> Codigo viejo")
-saldo_en_la_cuenta=[10,50]
+saldo_en_la_cuenta=[1000,2000]
 
 def ayuda():
 
